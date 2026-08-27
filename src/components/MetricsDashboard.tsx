@@ -521,7 +521,8 @@ export default function App({ data = [], sourceData = [] }) {
 
   const filteredPaceRows = useMemo(() => {
     let segmentPaceRows = paceRows.filter(
-      r => r.metricType === 'SEGMENT' && activeMonthsList.includes(r.month)
+      r => String(r.year) === String(selectedYear)
+        && r.metricType === 'SEGMENT' && activeMonthsList.includes(r.month)
     );
     if (selectedSegment !== 'ALL') {
       const target = selectedSegment.toUpperCase();
