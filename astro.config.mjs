@@ -2,6 +2,7 @@ import {defineConfig} from 'astro/config';
 import cloudflare from '@astrojs/cloudflare';
 import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
+import clerk from '@clerk/astro';
 
 // Patches node_modules/vite/dist/client/client.mjs
 function patchViteErrorOverlay() {
@@ -61,6 +62,12 @@ export default defineConfig({
     },
   }),
   integrations: [
+    clerk({
+      afterSignInUrl: '/dashboard',
+      afterSignUpUrl: '/dashboard',
+      signInUrl: '/sign-in',
+      signUpUrl: '/request-access',
+    }),
     react(),
     injectDevScript({scriptPath: '/generated/dev-only.js'}),
   ],
@@ -91,3 +98,5 @@ export default defineConfig({
     },
   },
 });
+
+

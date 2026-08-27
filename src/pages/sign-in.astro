@@ -1,51 +1,19 @@
-
-
 ---
 import MainLayout from '../layouts/main.astro';
+import ClerkSignIn from '../components/ClerkSignIn';
 ---
 
-<MainLayout pageClass="auth-page">
-  <div class="min-h-screen bg-black flex items-center justify-center p-4">
-    <div class="w-full max-w-md">
-      <div id="sign-in"></div>
-    </div>
-  </div>
+<MainLayout pageClass="">
+  <ClerkSignIn client:only="react" />
 </MainLayout>
 
-<script>
-  import { Clerk } from '@clerk/clerk-js';
-
-  const clerkPubKey = import.meta.env.PUBLIC_CLERK_PUBLISHABLE_KEY;
-
-  if (!clerkPubKey) {
-    throw new Error('Missing Clerk Publishable Key');
+<style>
+  /* Force light mode for this page */
+  :global(body.__DARK_MODE_CLASS__) {
+    background: linear-gradient(rgba(22, 54, 102, 0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(22, 54, 102, 0.035) 1px, transparent 1px),
+                #fafafa !important;
+    background-size: 40px 40px !important;
+    color: var(--rebel-blue) !important;
   }
-
-  const clerk = new Clerk(clerkPubKey);
-  await clerk.load();
-
-  const signInDiv = document.getElementById('sign-in') as HTMLDivElement;
-
-  if (signInDiv) {
-    clerk.mountSignIn(signInDiv, {
-      appearance: {
-        elements: {
-          rootBox: 'w-full',
-          card: 'bg-[#0a0a0a] border border-[rgba(255,255,255,0.13)] rounded-lg shadow-xl',
-          headerTitle: 'text-white text-2xl font-bold',
-          headerSubtitle: 'text-[rgba(255,255,255,0.67)]',
-          socialButtonsBlockButton: 'border border-[rgba(255,255,255,0.13)] bg-transparent text-white hover:bg-[rgba(255,255,255,0.05)]',
-          formButtonPrimary: 'bg-white text-black hover:bg-[rgba(255,255,255,0.9)]',
-          formFieldInput: 'bg-[#1a1a1a] border border-[rgba(255,255,255,0.13)] text-white',
-          footerActionLink: 'text-white hover:text-[rgba(255,255,255,0.8)]',
-          identityPreviewText: 'text-white',
-          formFieldLabel: 'text-[rgba(255,255,255,0.67)]',
-        },
-      },
-      signUpUrl: '/request-access',
-      fallbackRedirectUrl: '/dashboard',
-    });
-  }
-</script>
-
-
+</style>
