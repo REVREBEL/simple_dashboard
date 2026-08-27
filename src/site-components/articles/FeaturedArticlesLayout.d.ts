@@ -1,0 +1,34 @@
+import * as React from "react";
+import * as Types from "../webflow_modules/types";
+
+declare function FeaturedArticlesLayout(props: {
+  feature1HeadlineText?: React.ReactNode;
+  feature1HeadlineTextTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  feature1Image?: Types.Asset.Image;
+  feature1ImageAltText?: Types.Basic.AltText;
+  feature1ViewsLikesColor?: unknown;
+  feature2Headline?: React.ReactNode;
+  feature2HeadlineTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  feature2Image?: Types.Asset.Image;
+  feature2ImageAltText?: Types.Basic.AltText;
+  feature2ViewsLikesColor?: unknown;
+  headlineBrandColor2Image?: Types.Asset.Image;
+  headlineBrandColor6Image?: Types.Asset.Image;
+  headlineBrandColor7Image?: Types.Asset.Image;
+  headlineHeadlineText?: React.ReactNode;
+  headlineHeadlineTextTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  headlineImageAltText?: Types.Basic.AltText;
+  headlineLinkColor?: unknown;
+  likesViewsColorVariants?: unknown;
+  likesViewsSizeVariant?: unknown;
+  optionsColor?: "Brand Color 6" | "Brand Color 5" | "Brand Color 2";
+  optionsLinkColor?: unknown;
+  settingsSectionId?: string;
+  settingsSectionVisibility?: Types.Visibility.VisibilityConditions;
+  slotCardMeta?: React.ReactNode;
+  slotCardMeta2?: React.ReactNode;
+  slotLink?: React.ReactNode;
+  slotLink2?: React.ReactNode;
+  slotViewsLikes?: React.ReactNode;
+  slotViewsLikes2?: React.ReactNode;
+}): React.JSX.Element;

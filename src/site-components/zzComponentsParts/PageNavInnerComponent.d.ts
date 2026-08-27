@@ -1,0 +1,34 @@
+import * as React from "react";
+import * as Types from "../webflow_modules/types";
+
+declare function PageNavInnerComponent(props: {
+  headlineMenuNavHeadline?: React.ReactNode;
+  headlineMenuNavHeadlineTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  m3Submenu1SubmenuHeadline?: React.ReactNode;
+  m3Submenu2SubmenuHeadline?: React.ReactNode;
+  m3Submenu3SubmenuHeadline?: React.ReactNode;
+  m3Submenu4SubmenuHeadline?: React.ReactNode;
+  m4Submenu1SubmenuHeadline?: React.ReactNode;
+  m4Submenu2SubmenuHeadline?: React.ReactNode;
+  m4Submenu3SubmenuHeadline?: React.ReactNode;
+  m4Submenu4SubmenuHeadline?: React.ReactNode;
+  menuLink1MenuText?: React.ReactNode;
+  menuLink2MenuText?: React.ReactNode;
+  menuLink3MenuText?: React.ReactNode;
+  menuLink3SubmenuLink1?: Types.Basic.Link;
+  menuLink3SubmenuLink2?: Types.Basic.Link;
+  menuLink3SubmenuLink3?: Types.Basic.Link;
+  menuLink3SubmenuLink4?: Types.Basic.Link;
+  menuLink4MenuText?: React.ReactNode;
+  menuLink4SubmenuLink1?: Types.Basic.Link;
+  menuLink4SubmenuLink2?: Types.Basic.Link;
+  menuLink4SubmenuLink3?: Types.Basic.Link;
+  menuLink4SubmenuLink4?: Types.Basic.Link;
+  menuLink5MenuLinkText?: React.ReactNode;
+  menuLink6MenuLinkText?: React.ReactNode;
+  menuLink7MenuLinkText?: React.ReactNode;
+  settingsNavBarId?: string;
+  settingsNavBarVisibility?: Types.Visibility.VisibilityConditions;
+  triggerMenuIconVisibility?: Types.Visibility.VisibilityConditions;
+  triggerMenuTextVisibility?: Types.Visibility.VisibilityConditions;
+}): React.JSX.Element;

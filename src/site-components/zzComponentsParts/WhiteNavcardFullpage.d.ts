@@ -1,0 +1,34 @@
+import * as React from "react";
+import * as Types from "../webflow_modules/types";
+
+declare function WhiteNavcardFullpage(props: {
+  optionsWhiteNavCardColor?: "Light" | "Dark";
+  whiteCard1HeadlineTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  whiteCard1HeadlineText?: React.ReactNode;
+  whiteCard1Icon?: Types.Asset.Image;
+  whiteCard1IconAltText?: Types.Basic.AltText;
+  whiteCard1Link?: Types.Basic.Link;
+  whiteCard1LinkText?: React.ReactNode;
+  whiteCard1Paragraph?: React.ReactNode;
+  whiteCard2HeadlineTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  whiteCard2HeadlineText?: React.ReactNode;
+  whiteCard2Icon?: Types.Asset.Image;
+  whiteCard2IconAltText?: Types.Basic.AltText;
+  whiteCard2Link?: Types.Basic.Link;
+  whiteCard2LinkText?: React.ReactNode;
+  whiteCard2Paragraph?: React.ReactNode;
+  whiteCard3HeadlineTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  whiteCard3HeadlineText?: React.ReactNode;
+  whiteCard3Icon?: Types.Asset.Image;
+  whiteCard3IconAltText?: Types.Basic.AltText;
+  whiteCard3Link?: Types.Basic.Link;
+  whiteCard3LinkText?: React.ReactNode;
+  whiteCard3Paragraph?: React.ReactNode;
+  whiteCard4HeadlineTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  whiteCard4HeadlineText?: React.ReactNode;
+  whiteCard4Icon?: Types.Asset.Image;
+  whiteCard4IconAltText?: Types.Basic.AltText;
+  whiteCard4Link?: Types.Basic.Link;
+  whiteCard4LinkText?: React.ReactNode;
+  whiteCard4Paragraph?: React.ReactNode;
+}): React.JSX.Element;

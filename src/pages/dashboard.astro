@@ -1,0 +1,59 @@
+
+
+---
+import MainLayout from '../layouts/main.astro';
+import UserProfile from '../components/UserProfile';
+import AuthCheck from '../components/AuthCheck';
+import { baseUrl } from '../lib/base-url';
+---
+
+<MainLayout pageClass="dashboard">
+  <AuthCheck client:only="react">
+    <div class="min-h-screen bg-black text-white">
+      <nav class="border-b border-[rgba(255,255,255,0.13)] p-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+          <h1 class="text-xl font-bold">Metrics Dashboard</h1>
+          <UserProfile client:only="react" />
+        </div>
+      </nav>
+
+      <main class="max-w-7xl mx-auto px-8 py-12">
+        <div class="mb-12">
+          <h1 class="text-5xl md:text-6xl font-bold mb-4">
+            Welcome to Your Dashboard
+          </h1>
+          <p class="text-xl text-[rgba(255,255,255,0.67)]">
+            Select a dashboard to view your hotel performance metrics
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <a 
+            href={`${baseUrl}/metrics`}
+            class="group bg-[#0a0a0a] border border-[rgba(255,255,255,0.13)] rounded-lg p-8 hover:border-[rgba(255,255,255,0.3)] transition-all"
+          >
+            <div class="text-4xl mb-4">📊</div>
+            <h3 class="text-2xl font-semibold mb-3 group-hover:text-[#00A6B6] transition-colors">Segment Metrics</h3>
+            <p class="text-[rgba(255,255,255,0.67)]">
+              View detailed segment performance, pace analysis, and guest behavior profiles
+            </p>
+          </a>
+
+          <a 
+            href={`${baseUrl}/channels`}
+            class="group bg-[#0a0a0a] border border-[rgba(255,255,255,0.13)] rounded-lg p-8 hover:border-[rgba(255,255,255,0.3)] transition-all"
+          >
+            <div class="text-4xl mb-4">📈</div>
+            <h3 class="text-2xl font-semibold mb-3 group-hover:text-[#00A6B6] transition-colors">Channel Performance</h3>
+            <p class="text-[rgba(255,255,255,0.67)]">
+              Monitor booking channels, pickup patterns, and stay profiles
+            </p>
+          </a>
+        </div>
+      </main>
+    </div>
+  </AuthCheck>
+</MainLayout>
+
+
+

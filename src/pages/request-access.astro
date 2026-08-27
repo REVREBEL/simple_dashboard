@@ -1,0 +1,19 @@
+---
+import MainLayout from '../layouts/main.astro';
+import ClerkSignUp from '../components/ClerkSignUp';
+---
+
+<MainLayout pageClass="">
+  <ClerkSignUp client:only="react" />
+</MainLayout>
+
+<style>
+  /* Force light mode for this page */
+  :global(body.__DARK_MODE_CLASS__) {
+    background: linear-gradient(rgba(22, 54, 102, 0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(22, 54, 102, 0.035) 1px, transparent 1px),
+                #fafafa !important;
+    background-size: 40px 40px !important;
+    color: var(--rebel-blue) !important;
+  }
+</style>
