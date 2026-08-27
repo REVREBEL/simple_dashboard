@@ -1,0 +1,11 @@
+---
+import MainLayout from '../layouts/main.astro';
+import MetricsDashboard from '../components/MetricsDashboard';
+import AuthCheck from '../components/AuthCheck';
+---
+
+<MainLayout pageClass="metrics-dashboard">
+  <AuthCheck client:only="react">
+    <MetricsDashboard client:only="react" data={[]} sourceData={[]} />
+  </AuthCheck>
+</MainLayout>
