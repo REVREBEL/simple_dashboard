@@ -1,3 +1,4 @@
+
 ---
 import '../../generated/fonts.css';
 import '../site-components/global.css';
@@ -12,6 +13,9 @@ const { pageClass = '' } = Astro.props;
 <link rel="icon" type="image/png" href="/favicon.ico" />
 <meta name="viewport" content="width=device-width" />
 <meta name="generator" content={Astro.generator} />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Khand:wght@600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
 <title>Metrics Dashboard | REVREBEL</title>
 </head>
 <!-- Dark mode class injection point - will be replaced with `dark` class based on your site palette -->
@@ -19,3 +23,4 @@ const { pageClass = '' } = Astro.props;
 <slot />
 </body>
 </html>
+
