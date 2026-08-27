@@ -1,6 +1,8 @@
 
 
 
+
+
 # 🔑 Environment Variables Setup
 
 ## Required Environment Variables
@@ -9,12 +11,12 @@ Your Clerk authentication system requires two environment variables to function:
 
 ### 1. PUBLIC_CLERK_PUBLISHABLE_KEY
 - **Type:** Public (safe to expose in browser)
-- **Format:** Starts with `pk_test_` (development) or `pk_live_` (production)
+- **Format:** Starts with test or live prefix (from Clerk Dashboard)
 - **Purpose:** Used by the browser to communicate with Clerk
 
 ### 2. CLERK_SECRET_KEY
 - **Type:** Secret (never expose in browser)
-- **Format:** Starts with `sk_test_` (development) or `sk_live_` (production)
+- **Format:** Starts with test or live prefix (from Clerk Dashboard)
 - **Purpose:** Used by server-side code to verify sessions
 
 ## How to Get Your Keys
@@ -115,8 +117,8 @@ In Netlify Dashboard:
 ## Security Best Practices
 
 ### ✅ DO
-- Use test keys (starting with `pk_test_` or `sk_test_`) for development
-- Use live keys (starting with `pk_live_` or `sk_live_`) for production
+- Use test-prefixed keys for development
+- Use live-prefixed keys for production
 - Keep secret keys in `.env` file (never commit)
 - Add `.env` to `.gitignore`
 - Use environment variables in hosting platform
@@ -142,7 +144,7 @@ console.log('Has Secret Key:', !!import.meta.env.CLERK_SECRET_KEY);
 
 ### Expected Output
 ```
-Public Key: pk_test_[your actual key]
+Public Key: your_actual_clerk_key_here
 Has Secret Key: true
 ```
 
@@ -168,8 +170,8 @@ Has Secret Key: true
 **Cause:** Using wrong environment keys
 
 **Solution:**
-1. Development: Use test keys (prefix `pk_test_` or `sk_test_`)
-2. Production: Use live keys (prefix `pk_live_` or `sk_live_`)
+1. Development: Use test keys (check Clerk Dashboard for correct format)
+2. Production: Use live keys (check Clerk Dashboard for correct format)
 3. Don't mix test and live keys
 
 ## Key Rotation
@@ -219,6 +221,8 @@ Once your environment variables are set:
 ---
 
 **Need help?** Check `GETTING_STARTED.md` for the complete setup guide.
+
+
 
 
 
