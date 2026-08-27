@@ -1,3 +1,6 @@
+
+
+
 # 🔑 Environment Variables Setup
 
 ## Required Environment Variables
@@ -6,14 +9,12 @@ Your Clerk authentication system requires two environment variables to function:
 
 ### 1. PUBLIC_CLERK_PUBLISHABLE_KEY
 - **Type:** Public (safe to expose in browser)
-- **Format:** `pk_test_xxxxxxxxxxxxxxxxxxxxxxxxxx` (development)
-- **Format:** `pk_live_xxxxxxxxxxxxxxxxxxxxxxxxxx` (production)
+- **Format:** Starts with `pk_test_` (development) or `pk_live_` (production)
 - **Purpose:** Used by the browser to communicate with Clerk
 
 ### 2. CLERK_SECRET_KEY
 - **Type:** Secret (never expose in browser)
-- **Format:** `sk_test_xxxxxxxxxxxxxxxxxxxxxxxxxx` (development)
-- **Format:** `sk_live_xxxxxxxxxxxxxxxxxxxxxxxxxx` (production)
+- **Format:** Starts with `sk_test_` (development) or `sk_live_` (production)
 - **Purpose:** Used by server-side code to verify sessions
 
 ## How to Get Your Keys
@@ -43,11 +44,11 @@ Your Clerk authentication system requires two environment variables to function:
 
 ```env
 # Clerk Authentication
-PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_xxxxxxxxxxxxxxxxxxxxx
-CLERK_SECRET_KEY=sk_test_xxxxxxxxxxxxxxxxxxxxx
+PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key_here
+CLERK_SECRET_KEY=your_clerk_secret_key_here
 ```
 
-3. Replace the `xxxxx` with your actual keys from Clerk Dashboard
+3. Replace the placeholder keys with your actual keys from Clerk Dashboard
 4. Save the file
 5. **Restart your dev server**
 
@@ -59,9 +60,9 @@ WEBFLOW_API_HOST=https://api.webflow.com
 WEBFLOW_SITE_API_TOKEN=your_webflow_token
 WEBFLOW_CMS_SITE_API_TOKEN=your_cms_token
 
-# Clerk Authentication (ADD THESE)
-PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_Y2xlcmsuZXhhbXBsZS5jb20k
-CLERK_SECRET_KEY=sk_test_Y2xlcmsuZXhhbXBsZS5jb20k
+# Clerk Authentication (ADD THESE - Replace with your actual Clerk keys)
+PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key_here
+CLERK_SECRET_KEY=your_clerk_secret_key_here
 ```
 
 ## Production Deployment
@@ -72,7 +73,7 @@ CLERK_SECRET_KEY=sk_test_Y2xlcmsuZXhhbXBsZS5jb20k
 ```jsonc
 {
   "vars": {
-    "PUBLIC_CLERK_PUBLISHABLE_KEY": "pk_live_xxxxxxxxxxxxxxxxxxxxx"
+    "PUBLIC_CLERK_PUBLISHABLE_KEY": "your_production_publishable_key"
   }
 }
 ```
@@ -89,9 +90,9 @@ wrangler secret put CLERK_SECRET_KEY
 2. Navigate to **Apps** → **Your App** → **Settings**
 3. Add environment variables:
    - Name: `PUBLIC_CLERK_PUBLISHABLE_KEY`
-   - Value: `pk_live_xxxxxxxxxxxxxxxxxxxxx`
+   - Value: (paste your production publishable key)
    - Name: `CLERK_SECRET_KEY`
-   - Value: `sk_live_xxxxxxxxxxxxxxxxxxxxx`
+   - Value: (paste your production secret key)
 
 ### Vercel
 
@@ -114,8 +115,8 @@ In Netlify Dashboard:
 ## Security Best Practices
 
 ### ✅ DO
-- Use `pk_test_` and `sk_test_` keys for development
-- Use `pk_live_` and `sk_live_` keys for production
+- Use test keys (starting with `pk_test_` or `sk_test_`) for development
+- Use live keys (starting with `pk_live_` or `sk_live_`) for production
 - Keep secret keys in `.env` file (never commit)
 - Add `.env` to `.gitignore`
 - Use environment variables in hosting platform
@@ -141,7 +142,7 @@ console.log('Has Secret Key:', !!import.meta.env.CLERK_SECRET_KEY);
 
 ### Expected Output
 ```
-Public Key: pk_test_xxxxxxxxxxxxxxxxxxxxx
+Public Key: pk_test_[your actual key]
 Has Secret Key: true
 ```
 
@@ -167,8 +168,8 @@ Has Secret Key: true
 **Cause:** Using wrong environment keys
 
 **Solution:**
-1. Development: Use `pk_test_` keys
-2. Production: Use `pk_live_` keys
+1. Development: Use test keys (prefix `pk_test_` or `sk_test_`)
+2. Production: Use live keys (prefix `pk_live_` or `sk_live_`)
 3. Don't mix test and live keys
 
 ## Key Rotation
@@ -218,3 +219,6 @@ Once your environment variables are set:
 ---
 
 **Need help?** Check `GETTING_STARTED.md` for the complete setup guide.
+
+
+
