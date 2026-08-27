@@ -1,0 +1,83 @@
+/**
+GENERATED FILE
+
+webflow.css is generated automatically by webflow and is used to expose variables from your webflow design system in your app.
+
+Any changes to this file will be overwritten the next time your app is loaded in the workbench.
+
+In order to override any of these variables, you can redefine them in a CSS file that is imported globally after the webflow.css on your page.
+
+Font imports and @font-face declarations are in fonts.css, which should be imported before this file.
+
+You can learn more about CSS custom properties here:
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascading_variables/Using_CSS_custom_properties#inheritance_of_custom_properties
+*/
+
+:root {
+  --_apps---typography--heading-font: ;
+  --_apps---typography--body-font: ;
+  --_apps---typography--button-font: ;
+  --_apps---sizes--radius: 0.5rem;
+  --_apps---colors--background: hsl(210, 20%, 98%);
+  --_apps---colors--foreground: hsl(210, 15%, 20%);
+  --_apps---colors--card: hsl(210, 15%, 100%);
+  --_apps---colors--card-foreground: hsl(210, 15%, 20%);
+  --_apps---colors--popover: hsl(210, 15%, 98%);
+  --_apps---colors--popover-foreground: hsl(210, 15%, 20%);
+  --_apps---colors--primary: hsl(222, 89%, 56%);
+  --_apps---colors--primary-foreground: hsl(210, 40%, 98%);
+  --_apps---colors--secondary: hsl(210, 40%, 80%);
+  --_apps---colors--secondary-foreground: hsl(210, 15%, 20%);
+  --_apps---colors--muted: hsl(210, 20%, 85%);
+  --_apps---colors--muted-foreground: hsl(210, 15%, 40%);
+  --_apps---colors--accent: hsl(330, 70%, 60%);
+  --_apps---colors--accent-foreground: hsl(0, 0%, 98%);
+  --_apps---colors--destructive: hsl(0, 75%, 60%);
+  --_apps---colors--border: hsl(210, 15%, 85%);
+  --_apps---colors--input: hsl(210, 15%, 95%);
+  --_apps---colors--ring: hsl(222, 89%, 70%);
+  --_apps---charts--chart-1: oklch(77.7% .152 181.912);
+  --_apps---charts--chart-2: oklch(70.4% .14 182.503);
+  --_apps---charts--chart-3: oklch(60% .118 184.704);
+  --_apps---charts--chart-4: oklch(51.1% .096 186.391);
+  --_apps---charts--chart-5: oklch(43.7% .078 188.216);
+  --_apps---sidebar--sidebar: hsl(210, 25%, 95%);
+  --_apps---sidebar--sidebar-foreground: hsl(210, 15%, 25%);
+  --_apps---sidebar--sidebar-primary: hsl(222, 89%, 56%);
+  --_apps---sidebar--sidebar-primary-foreground: hsl(210, 40%, 98%);
+  --_apps---sidebar--sidebar-accent: hsl(330, 70%, 60%);
+  --_apps---sidebar--sidebar-accent-foreground: hsl(0, 0%, 98%);
+  --_apps---sidebar--sidebar-border: hsl(210, 15%, 85%);
+  --_apps---sidebar--sidebar-ring: hsl(222, 89%, 70%);
+  --_apps---colors--background-dark: #b2d3de;
+  --_apps---colors--foreground-dark: hsl(210, 15%, 85%);
+  --_apps---colors--card-dark: var(--color-inputs--powder);
+  --_apps---colors--card-foreground-dark: hsl(210, 15%, 85%);
+  --_apps---colors--popover-dark: #b2d3de;
+  --_apps---colors--popover-foreground-dark: hsl(210, 15%, 85%);
+  --_apps---colors--primary-dark: hsl(220, 90%, 60%);
+  --_apps---colors--primary-foreground-dark: hsl(210, 40%, 98%);
+  --_apps---colors--secondary-dark: #b2d3de;
+  --_apps---colors--secondary-foreground-dark: hsl(210, 15%, 85%);
+  --_apps---colors--muted-dark: hsl(210, 10%, 50%);
+  --_apps---colors--muted-foreground-dark: hsl(210, 10%, 75%);
+  --_apps---colors--accent-dark: hsl(340, 80%, 65%);
+  --_apps---colors--accent-foreground-dark: hsl(210, 40%, 98%);
+  --_apps---colors--destructive-dark: hsl(0, 75%, 65%);
+  --_apps---colors--border-dark: hsl(210, 10%, 40%);
+  --_apps---colors--input-dark: var(--color-inputs--powder);
+  --_apps---colors--ring-dark: hsl(220, 90%, 70%);
+  --_apps---charts--chart-1-dark: oklch(77.7% .152 181.912);
+  --_apps---charts--chart-2-dark: oklch(70.4% .14 182.503);
+  --_apps---charts--chart-3-dark: oklch(60% .118 184.704);
+  --_apps---charts--chart-4-dark: oklch(51.1% .096 186.391);
+  --_apps---charts--chart-5-dark: oklch(43.7% .078 188.216);
+  --_apps---sidebar--sidebar-dark: #b2d3de;
+  --_apps---sidebar--sidebar-foreground-dark: hsl(210, 15%, 85%);
+  --_apps---sidebar--sidebar-primary-dark: hsl(220, 90%, 60%);
+  --_apps---sidebar--sidebar-primary-foreground-dark: hsl(210, 40%, 98%);
+  --_apps---sidebar--sidebar-accent-dark: hsl(340, 80%, 65%);
+  --_apps---sidebar--sidebar-accent-foreground-dark: hsl(210, 40%, 98%);
+  --_apps---sidebar--sidebar-border-dark: hsl(210, 10%, 40%);
+  --_apps---sidebar--sidebar-ring-dark: hsl(220, 90%, 70%);
+}

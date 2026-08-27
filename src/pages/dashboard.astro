@@ -1,0 +1,123 @@
+
+---
+import MainLayout from '../layouts/main.astro';
+import UserProfile from '../components/UserProfile';
+---
+
+<MainLayout pageClass="dashboard">
+  <div class="min-h-screen bg-black text-white">
+    <nav class="border-b border-[rgba(255,255,255,0.13)] p-4">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <h1 class="text-xl font-bold">Metrics Dashboard</h1>
+        <div class="flex items-center gap-4">
+          <div id="user-button"></div>
+          <button id="sign-out-btn" class="px-4 py-2 border border-[rgba(255,255,255,0.13)] rounded hover:bg-[rgba(255,255,255,0.05)] transition">
+            Sign Out
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto p-8">
+      <div id="auth-loading" class="text-center py-12">
+        <p class="text-[rgba(255,255,255,0.67)]">Loading...</p>
+      </div>
+
+      <div id="auth-content" class="hidden">
+        <h2 class="text-3xl font-bold mb-6">Welcome to Your Dashboard</h2>
+        
+        <div class="mb-8">
+          <UserProfile client:only="react" />
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-[#0a0a0a] border border-[rgba(255,255,255,0.13)] rounded-lg p-6">
+            <h3 class="text-lg font-semibold mb-2">Total Revenue</h3>
+            <p class="text-3xl font-bold text-green-400">$124,500</p>
+            <p class="text-sm text-[rgba(255,255,255,0.67)] mt-2">+12% from last month</p>
+          </div>
+          
+          <div class="bg-[#0a0a0a] border border-[rgba(255,255,255,0.13)] rounded-lg p-6">
+            <h3 class="text-lg font-semibold mb-2">Occupancy Rate</h3>
+            <p class="text-3xl font-bold text-blue-400">87%</p>
+            <p class="text-sm text-[rgba(255,255,255,0.67)] mt-2">+5% from last month</p>
+          </div>
+          
+          <div class="bg-[#0a0a0a] border border-[rgba(255,255,255,0.13)] rounded-lg p-6">
+            <h3 class="text-lg font-semibold mb-2">Active Bookings</h3>
+            <p class="text-3xl font-bold text-purple-400">342</p>
+            <p class="text-sm text-[rgba(255,255,255,0.67)] mt-2">+8% from last month</p>
+          </div>
+        </div>
+
+        <div class="mt-8 bg-[#0a0a0a] border border-[rgba(255,255,255,0.13)] rounded-lg p-6">
+          <h3 class="text-xl font-semibold mb-4">Recent Activity</h3>
+          <div class="space-y-3">
+            <div class="flex justify-between items-center py-2 border-b border-[rgba(255,255,255,0.08)]">
+              <span>New booking from Channel A</span>
+              <span class="text-[rgba(255,255,255,0.67)]">2 hours ago</span>
+            </div>
+            <div class="flex justify-between items-center py-2 border-b border-[rgba(255,255,255,0.08)]">
+              <span>Revenue milestone reached</span>
+              <span class="text-[rgba(255,255,255,0.67)]">5 hours ago</span>
+            </div>
+            <div class="flex justify-between items-center py-2">
+              <span>Performance report generated</span>
+              <span class="text-[rgba(255,255,255,0.67)]">1 day ago</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</MainLayout>
+
+<script>
+  import { Clerk } from '@clerk/clerk-js';
+
+  const clerkPubKey = import.meta.env.PUBLIC_CLERK_PUBLISHABLE_KEY;
+
+  if (!clerkPubKey) {
+    throw new Error('Missing Clerk Publishable Key');
+  }
+
+  const clerk = new Clerk(clerkPubKey);
+  await clerk.load();
+
+  const loadingDiv = document.getElementById('auth-loading');
+  const contentDiv = document.getElementById('auth-content');
+  const signOutBtn = document.getElementById('sign-out-btn') as HTMLButtonElement;
+  const userButtonDiv = document.getElementById('user-button') as HTMLDivElement;
+
+  // Check if user is signed in
+  if (!clerk.user) {
+    window.location.href = '/sign-in';
+  } else {
+    // Show content
+    if (loadingDiv) loadingDiv.classList.add('hidden');
+    if (contentDiv) contentDiv.classList.remove('hidden');
+
+    // Mount user button
+    if (userButtonDiv) {
+      clerk.mountUserButton(userButtonDiv, {
+        appearance: {
+          elements: {
+            userButtonAvatarBox: 'w-10 h-10',
+            userButtonPopoverCard: 'bg-[#0a0a0a] border border-[rgba(255,255,255,0.13)]',
+            userButtonPopoverActionButton: 'text-white hover:bg-[rgba(255,255,255,0.05)]',
+          },
+        },
+      });
+    }
+
+    // Sign out handler
+    if (signOutBtn) {
+      signOutBtn.addEventListener('click', async () => {
+        await clerk.signOut();
+        window.location.href = '/sign-in';
+      });
+    }
+  }
+</script>
+
+

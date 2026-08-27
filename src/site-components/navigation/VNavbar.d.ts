@@ -1,0 +1,37 @@
+import * as React from "react";
+import * as Types from "../webflow_modules/types";
+
+declare function VNavbar(props: {
+  brandLogoBrandLogoVisibility?: Types.Visibility.VisibilityConditions;
+  brandLogoImage?: Types.Asset.Image;
+  brandLogoImageAltText?: Types.Basic.AltText;
+  brandLogoLogoLink?: Types.Basic.Link;
+  buttonButton?: React.ReactNode;
+  menuDropdown1DropdownMenu1Card1?: React.ReactNode;
+  menuDropdown1DropdownMenu1Card2?: React.ReactNode;
+  menuDropdown1DropdownMenu1Card3?: React.ReactNode;
+  menuDropdown1DropdownMenu1Card4?: React.ReactNode;
+  menuDropdown1DropdownMenu1MenuVisibility?: Types.Visibility.VisibilityConditions;
+  menuDropdown2DropdownMenu2Card1?: React.ReactNode;
+  menuDropdown2DropdownMenu2Card2?: React.ReactNode;
+  menuDropdown2DropdownMenu2Card3?: React.ReactNode;
+  menuDropdown2DropdownMenu2Card4?: React.ReactNode;
+  menuDropdown2DropdownMenu2MenuVisibility?: Types.Visibility.VisibilityConditions;
+  menuLink1MenuLink?: Types.Basic.Link;
+  menuLink1MenuLinkText?: React.ReactNode;
+  menuLink1MenuLinkVisibility?: Types.Visibility.VisibilityConditions;
+  menuLink2MenuLink?: Types.Basic.Link;
+  menuLink2MenuLinkText?: React.ReactNode;
+  menuLink2MenuLinkVisibility?: Types.Visibility.VisibilityConditions;
+  menuLink3MenuLink?: Types.Basic.Link;
+  menuLink3MenuLinkText?: React.ReactNode;
+  menuLink3MenuLinkVisibility?: Types.Visibility.VisibilityConditions;
+  menuLink4MenuLink?: Types.Basic.Link;
+  menuLink4MenuLinkText?: React.ReactNode;
+  menuLink4MenuLinkVisibility?: Types.Visibility.VisibilityConditions;
+  menuLink5MenuLink?: Types.Basic.Link;
+  menuLink5MenuLinkText?: React.ReactNode;
+  menuLink5MenuLinkVisibility?: Types.Visibility.VisibilityConditions;
+  settingsNavigationColor?: "Light" | "Dark";
+  settingsNavigationVisibility?: Types.Visibility.VisibilityConditions;
+}): React.JSX.Element;

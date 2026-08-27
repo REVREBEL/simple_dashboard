@@ -1,0 +1,64 @@
+import * as React from "react";
+import * as Types from "../webflow_modules/types";
+
+declare function PageNav(props: {
+  navBarFullPageHeadlineMenuNavHeadline?: React.ReactNode;
+  navBarFullPageHeadlineMenuNavHeadlineTag?:
+    | "h1"
+    | "h2"
+    | "h3"
+    | "h4"
+    | "h5"
+    | "h6";
+  navBarFullPageM3Submenu1SubmenuHeadline?: React.ReactNode;
+  navBarFullPageM3Submenu1SubmenuParagraph?: React.ReactNode;
+  navBarFullPageM3Submenu1SubmenuTag?: React.ReactNode;
+  navBarFullPageM3Submenu2SubmenuHeadline?: React.ReactNode;
+  navBarFullPageM3Submenu2SubmenuParagraph?: React.ReactNode;
+  navBarFullPageM3Submenu2SubmenuTag?: React.ReactNode;
+  navBarFullPageM3Submenu3SubmenuHeadline?: React.ReactNode;
+  navBarFullPageM3Submenu3SubmenuParagraph?: React.ReactNode;
+  navBarFullPageM3Submenu3SubmenuTag?: React.ReactNode;
+  navBarFullPageM3Submenu4SubmenuHeadline?: React.ReactNode;
+  navBarFullPageM3Submenu4SubmenuParagraph?: React.ReactNode;
+  navBarFullPageM3Submenu4SubmenuTag?: React.ReactNode;
+  navBarFullPageM4Submenu1Icon?: Types.Asset.Image;
+  navBarFullPageM4Submenu1SubmenuHeadline?: React.ReactNode;
+  navBarFullPageM4Submenu1SubmenuParagraph?: React.ReactNode;
+  navBarFullPageM4Submenu1SubmenuTag?: React.ReactNode;
+  navBarFullPageM4Submenu2Icon?: Types.Asset.Image;
+  navBarFullPageM4Submenu2SubmenuHeadline?: React.ReactNode;
+  navBarFullPageM4Submenu2SubmenuParagraph?: React.ReactNode;
+  navBarFullPageM4Submenu2SubmenuTag?: React.ReactNode;
+  navBarFullPageM4Submenu3Icon?: Types.Asset.Image;
+  navBarFullPageM4Submenu3SubmenuHeadline?: React.ReactNode;
+  navBarFullPageM4Submenu3SubmenuParagraph?: React.ReactNode;
+  navBarFullPageM4Submenu3SubmenuTag?: React.ReactNode;
+  navBarFullPageM4Submenu4Icon?: Types.Asset.Image;
+  navBarFullPageM4Submenu4SubmenuHeadline?: React.ReactNode;
+  navBarFullPageM4Submenu4SubmenuParagraph?: React.ReactNode;
+  navBarFullPageM4Submenu4SubmenuTag?: React.ReactNode;
+  navBarFullPageMenuLink1MenuLink?: Types.Basic.Link;
+  navBarFullPageMenuLink1MenuText?: React.ReactNode;
+  navBarFullPageMenuLink2MeetTheRebels?: Types.Basic.Link;
+  navBarFullPageMenuLink2MenuText?: React.ReactNode;
+  navBarFullPageMenuLink3MenuText?: React.ReactNode;
+  navBarFullPageMenuLink3SubmenuLink1?: Types.Basic.Link;
+  navBarFullPageMenuLink3SubmenuLink2?: Types.Basic.Link;
+  navBarFullPageMenuLink3SubmenuLink3?: Types.Basic.Link;
+  navBarFullPageMenuLink3SubmenuLink4?: Types.Basic.Link;
+  navBarFullPageMenuLink4MenuText?: React.ReactNode;
+  navBarFullPageMenuLink4SubmenuLink1?: Types.Basic.Link;
+  navBarFullPageMenuLink4SubmenuLink2?: Types.Basic.Link;
+  navBarFullPageMenuLink4SubmenuLink3?: Types.Basic.Link;
+  navBarFullPageMenuLink4SubmenuLink4?: Types.Basic.Link;
+  navBarFullPageMenuLink5MenuLink?: Types.Basic.Link;
+  navBarFullPageMenuLink5MenuLinkText?: React.ReactNode;
+  navBarFullPageMenuLink6MenuLink?: Types.Basic.Link;
+  navBarFullPageMenuLink6MenuLinkText?: React.ReactNode;
+  navBarFullPageMenuLink7MenuLink?: Types.Basic.Link;
+  navBarFullPageMenuLink7MenuLinkText?: React.ReactNode;
+  navBarFullPageSettingsNavBarId?: string;
+  navBarFullPageSettingsNavBarMainText?: React.ReactNode;
+  navBarFullPageSettingsNavBarVisibility?: Types.Visibility.VisibilityConditions;
+}): React.JSX.Element;

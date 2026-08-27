@@ -1,0 +1,8 @@
+import * as React from "react";
+import * as Types from "../webflow_modules/types";
+
+declare function Disclaimer(props: {
+  contentRichTextContent?: Types.Basic.RichTextChildren;
+  settingsSectionId?: string;
+  settingsSectionVisibility?: Types.Visibility.VisibilityConditions;
+}): React.JSX.Element;
