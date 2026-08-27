@@ -1,12 +1,23 @@
 ---
+import '../../generated/fonts.css';
+import '../site-components/global.css';
+import '../styles/global.css';
+
 import MainLayout from '../layouts/main.astro';
 import ClerkSignIn from '../components/ClerkSignIn';
+
 ---
 
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/png" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Sign In | Metrics Dashboard</title>
+</head>
 <MainLayout pageClass="">
   <ClerkSignIn client:only="react" />
 </MainLayout>
-
 <style>
   /* Force light mode for this page */
   :global(body.__DARK_MODE_CLASS__) {
@@ -17,3 +28,4 @@ import ClerkSignIn from '../components/ClerkSignIn';
     color: var(--rebel-blue) !important;
   }
 </style>
+</html>

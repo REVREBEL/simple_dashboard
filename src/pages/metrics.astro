@@ -1,11 +1,45 @@
 ---
 import MainLayout from '../layouts/main.astro';
-import MetricsDashboard from '../components/MetricsDashboard';
 import AuthCheck from '../components/AuthCheck';
+import MetricsDashboard from '../components/MetricsDashboard';
+import { baseUrl } from '../lib/base-url';
+
+// Fetch dashboard data
+let data: any[] = [];
+let sourceData: any[] = [];
+
+try {
+  // Fetch main dashboard data
+  const mainResponse = await fetch(`${baseUrl}/api/sheet`, {
+    headers: {
+      'Cookie': Astro.request.headers.get('Cookie') || ''
+    }
+  });
+  
+  if (mainResponse.ok) {
+    const mainResult = await mainResponse.json();
+    data = mainResult.rows || [];
+  }
+
+  // Fetch source dataset
+  const sourceResponse = await fetch(`${baseUrl}/api/sheet?gid=1319180770`, {
+    headers: {
+      'Cookie': Astro.request.headers.get('Cookie') || ''
+    }
+  });
+  
+  if (sourceResponse.ok) {
+    const sourceResult = await sourceResponse.json();
+    sourceData = sourceResult.rows || [];
+  }
+} catch (error) {
+  console.error('Error fetching sheet data:', error);
+}
 ---
 
 <MainLayout pageClass="metrics-dashboard">
   <AuthCheck client:only="react">
-    <MetricsDashboard client:only="react" data={[]} sourceData={[]} />
+    <MetricsDashboard client:only="react" data={data} sourceData={sourceData} />
   </AuthCheck>
 </MainLayout>
+
